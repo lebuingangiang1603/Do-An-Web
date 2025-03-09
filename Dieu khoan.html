@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airnova Điều khoản</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    /* Header CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0px 30px;
+        }
+        .logo-header img {
+            max-height: 70px;
+            width: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 30px; 
+        }
+        .btn-login {
+            color: #262262;
+            border: 1px solid #262262;
+            background: none;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        .btn-signup {
+            background-color: #262262;
+            color: white;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        .dropdown-toggle::after {
+            display: none; 
+        }
+
+/* Footer CSS */
+        .footer {
+            background-color: #19232d;
+            color: #979797;
+            padding: 40px 0;
+        }
+        .footer a {
+            color: #979797;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #979797; 
+        }
+        .social-icons a i {
+            color: #979797; 
+        }
+        .bct-icon {
+            width: 200px;
+            display: block;
+            margin: 0;
+        }
+        .iata-iso {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .iata-icon, .iso-icon {
+            width: 80px;
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            width: fit-content;
+        }
+
+        .payment-methods div {
+            width: 60px;  
+            height: 40px;  
+            background: white;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            border-radius: 5px;  
+            position: relative;  
+        }
+
+        .payment-methods img {
+            max-width: 80%; 
+            max-height: 80%; 
+            object-fit: contain;
+            position: absolute; 
+        }
+        .logo-footer {
+            width: 75%;
+        }
+        hr {
+            border-color: #ccc;
+            margin: 20px 0;
+            width: 100%;
+            position: relative;
+            left: 0;
+        }
+        .footer h5 {
+            color: white;
+        }
+        .copyright {
+            color: white;
+        }
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        .about {
+            margin-left: 250px;
+            margin-right: auto;
+            max-width: 300px; 
+            text-align: left;
+        }
+        .last {
+            margin-left: 100px;
+        }
+        .about h5:nth-of-type(2) {
+            margin-top: 30px;
+        }
+
+/* Banner CSS */
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .banner img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: brightness(70%);
+            object-position: center top;
+        }
+        .banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3.5em;
+            font-weight: bold;
+        }
+
+/* Content CSS */
+        .content {
+            max-width: 90%;
+            margin: 3rem auto;
+            background: white;
+        }
+        .content p {
+            line-height: 1.6;
+            margin-top: 1.5rem;
+        }
+
+        .content-li {
+            line-height: 1.6;
+            margin-top: 1.5rem;
+        }
+
+        .content h4, h5 {
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+<!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand logo-header" href="#">
+                    <img src="img/logo.png" alt="Airnova Logo">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto"> 
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Ưu đãi <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Voucher</a></li>
+                                <li><a class="dropdown-item" href="#">Chương trình giảm giá</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Hỗ trợ <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                                <li><a class="dropdown-item" href="#">Thông tin liên hệ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#">Lịch sử đặt chỗ</a>
+                        </li>
+                    </ul>
+
+                    <!-- Đăng nhập / Đăng ký -->
+                    <div class="d-flex gap-3">
+                        <button class="btn-login">Đăng nhập</button>
+                        <button class="btn-signup">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- Banner -->
+    <div class="banner">
+        <img src="img/bg banner.jpg" alt="Background">
+        <h1>Điều khoản & Điều kiện</h1>
+    </div>
+
+<!-- Content -->
+    <div class="content">         
+        <h4>ĐIỀU KHOẢN SỬ DỤNG</h4> 
+        
+        <p>BẠN PHẢI ĐỌC NHỮNG ĐIỀU KHOẢN SỬ DỤNG DƯỚI ĐÂY TRƯỚC KHI SỬ DỤNG TRANG WEB NÀY. VIỆC SỬ DỤNG TRANG WEB NÀY XÁC NHẬN VIỆC CHẤP THUẬN VÀ TUÂN THỦ CÁC ĐIỀU KHOẢN VÀ ĐIỀU KIỆN DƯỚI ĐÂY.</p>
+
+        <p>
+            Bằng cách truy cập và/hoặc sử dụng Trang Web <a href="https://www.Airnova.com/vi-vn">www.Airnova.com/vi-vn</a> (“Trang Web”), bạn thừa nhận rằng bạn đã đọc, hiểu và đồng ý chịu sự ràng buộc bởi các Điều Khoản Sử Dụng được quy định dưới đây và các điều khoản và điều kiện khác liên quan đến Trang Web, bao gồm nhưng không giới hạn ở các điều khoản và điều kiện về bảo mật và Các Câu Hỏi Thường Gặp, mà chúng cấu thành các thành phần không thể tách rời của các Điều Khoản Sử Dụng (“Điều Khoản”) này. Bạn phải đủ mười tám (18) tuổi trở lên để được phép sử dụng Trang Web.
+        </p>
+        
+        <p>
+            Xin lưu ý rằng chúng tôi có thể thay đổi, sửa đổi, bổ sung và loại bỏ các Điều Khoản này vào bất cứ thời điểm nào mà không cần thông báo trước. Bạn phải đọc các Điều Khoản này một cách định kỳ. Bằng việc tiếp tục sử dụng Trang Web này sau khi đã có những thay đổi như vậy đối với các Điều Khoản, người truy cập, người dùng hoặc Người Dùng Đã Đăng Ký (“bạn” hay “Người Dùng”) đồng ý và chấp thuận với những thay đổi đó. Nếu bạn sử dụng bất kỳ dịch vụ nào khác của chúng tôi, thì việc sử dụng của bạn được dựa trên sự chấp thuận và tuân thủ các điều khoản và điều kiện được áp dụng đối với các dịch vụ đó.
+        </p>
+        
+        <p>
+            Các quy định của Điều Khoản Sử Dụng này được dịch từ phiên bản gốc tiếng Anh, và được cung cấp nhằm tạo sự thuận tiện cho việc xem xét của bạn. Có thể có một số khác biệt giữa bản dịch và bản gốc tiếng Anh, và trong trường hợp có bất kỳ sự khác biệt nào như vậy, thì sự khác biệt đó được coi là lỗi dịch thuật và bản tiếng Anh sẽ được ưu tiên áp dụng. Nếu nghi ngờ về tính chính xác của thông tin chứa trong bản dịch, xin vui lòng tham khảo phiên bản tiếng Anh.
+        </p>
+        
+        <h5>PHẠM VI CÁC DỊCH VỤ CỦA CHÚNG TÔI</h5>
+
+        <p>
+            Thông qua Trang Web, Airnova cung cấp một nền công cụ trực tuyến, nơi bạn có thể duyệt tìm các hãng hàng không khác nhau, và/hoặc nơi lưu trú và phòng ở tạm thời (nếu có), và thực hiện việc đặt chỗ (“Dịch Vụ”). Người Dùng có thể đặt trên Trang Web các dịch vụ do các khách sạn, hãng hàng không và/hoặc bất kỳ nhà cung cấp dịch vụ khác (“Các Nhà Cung Cấp”) cung cấp. Bằng cách đưa ra một lệnh đặt chỗ thông qua Trang Web, bạn có thể đặt chỗ máy bay, phòng khách sạn, hoặc các dịch vụ khác trên Trang Web của chúng tôi. Chúng tôi sẽ gửi một xác nhận lệnh đặt chỗ qua email xác nhận. Chúng tôi bảo lưu quyền từ chối lệnh đặt chỗ của bạn theo quy định dưới đây.
+        </p>
+        
+        <p>
+            Mặc dù chúng tôi sẽ sử dụng những kỹ năng chuyên môn với sự cẩn trọng của chúng tôi trong việc thực hiện dịch vụ, chúng tôi không xác nhận, và không đảm bảo rằng tất cả các thông tin được cung cấp là chính xác, đầy đủ, phù hợp hoặc hiện hành, và chúng tôi không chịu trách nhiệm cho bất kỳ sai sót nào (bao gồm cả các lỗi sắp xếp và đánh máy), trở ngại (cho dù do sự hư hỏng, sửa chữa hoặc nâng cấp tạm thời và/hoặc cục bộ đối với Trang Web hoặc lý do khác), không chính xác, nhầm lẫn hoặc thông tin sai lệch hoặc việc không thể chuyển thông tin. Điều này bao gồm tất cả thông tin trên Trang Web hoặc các nền tảng khác của chúng tôi trong đó liên quan đến loại máy bay, sơ đồ chỗ ngồi, khoảng cách ghế, hệ thống giải trí trên chuyến bay và WiFi, hoặc bất kỳ thông tin nào khác liên quan đến các tiện ích trên chuyến bay.
+        </p>
+        
+        <p>
+            Xảy ra những thay đổi về điều kiện hoặc hoàn cảnh thị trường mà có thể dẫn đến những thay đổi trong một thời gian ngắn khiến thông tin được cung cấp không chính xác hoặc không hiện hành. Trong trường hợp có bất kỳ vấn đề gì, bộ phận dịch vụ khách hàng có thể liên hệ để hỗ trợ bạn và giải đáp cho các thắc mắc của bạn.
+        </p>
+        
+        <p>
+            Trang Web này không đưa ra bất cứ tuyên bố nào và không được giải thích là đưa ra bất cứ đề nghị hoặc gợi ý nào về mức độ chất lượng dịch vụ hoặc đánh giá xếp hạng về các Nhà Cung Cấp được liệt kê trên Trang Web. Chúng tôi tuyên bố khước từ bất kỳ khiếu nại, tổn thất hoặc trách nhiệm nào đối với chất lượng hay tình trạng của Nhà Cung Cấp hiện hữu được liệt kê trên Trang Web (cung cấp các dịch vụ hàng không, khách sạn hoặc các dịch vụ khác). Các Nhà Cung Cấp có thể được giới thiệu ở hình thức phân loại thứ hạng khác nhau dựa trên các yếu tố bao gồm nhưng không giới hạn các đánh giá, xếp hạng hoặc các yếu tố khác của họ. Sự xếp hạng đưa ra được tính dựa trên các thuật toán tự động có thể được cập nhật và thay đổi tùy từng thời điểm, theo quyết định chỉ của riêng của chúng tôi.
+        </p>
+        
+        <p>
+            Chúng tôi có quyền không chấp nhận bất kỳ Người Dùng hoặc việc đặt chỗ nào (hoặc trong một số trường hợp, hủy bỏ xác nhận việc đặt chỗ) theo quyết định của riêng chúng tôi vì bất kỳ nguyên nhân nào và không cần đưa ra lý do cho việc bác bỏ/từ chối/hủy bỏ. Những lý do để từ chối Người Dùng hoặc việc đặt chỗ hoặc hủy bỏ việc xác nhận đặt chỗ có thể bao gồm nhưng không giới hạn ở: vi phạm các Điều Khoản này, xử phạt về thương mại hay kinh tế của các cơ quan thẩm quyền toàn cầu hoặc quốc gia, cấm vận, các quy định cấm, gian lận hoặc trộm cắp (hoặc có dấu hiệu hay nghi ngờ gian lận hoặc trộm cắp), nghi ngờ về hoạt động tội phạm, việc đặt chỗ có dấu hiệu khả nghi, dịch vụ không có hoặc Nhà Cung Cấp không còn cung cấp, Người Dùng cung cấp thông tin không chính xác, thông tin sai hoặc thông tin nhầm lẫn, các vấn đề về trao đổi, thông tin, giao dịch điện tử thẻ tín dụng, hành vi không phù hợp, các mối đe dọa, xúc phạm, từ chối cung cấp thông tin, trở ngại thực tế, khó khăn hoặc trục trặc trong trao đổi thông tin, Lỗi Thực (được mô tả dưới đây), tiền sử có hành vi vi phạm những Điều Khoản này hoặc bị từ chối, hoặc có tên trong bất kỳ “danh sách đen” hay “danh sách bị theo dõi” của chính phủ hoặc các tổ chức quốc tế. Trong trường hợp đặt chỗ bị Airnova từ chối hoặc hủy bỏ và việc thanh toán đã được thực hiện, Airnova sẽ hoàn trả số tiền đã được thanh toán mà không tính thêm khoản phí nào. Chúng tôi có thể xóa hoặc gỡ bỏ (“Bị Gỡ Bỏ”) tư cách thành viên của Người Dùng Trang Web này bất cứ lúc nào, tạm thời hoặc vĩnh viễn. Những Người Dùng Bị Gỡ Bỏ bị cấm việc cố gắng sử dụng Trang Web với bất kỳ tên nào khác hoặc thông qua Người Dùng khác (được mô tả dưới đây trong quy định về Cơ Chế Phòng Chống Gian Lận).
+        </p>
+        
+        <p>
+            Trong trường hợp cụ thể, chúng tôi có thể hủy bỏ hoặc từ chối giao dịch đặt chỗ đối với các “Lỗi Thực”, mà không phụ thuộc vào nguồn gốc các sai sót. Để tránh sự nghi ngờ, Lỗi Thực là lỗi trên Trang Web (ví dụ như trong điều khoản về giá cả) mà không có người bình thường nào cho là phù hợp hoặc có ý nghĩa trong kinh doanh. Số tiền đã thanh toán sẽ được hoàn trả mà không tính thêm khoản phí nào khác trong trường hợp như vậy.
+        </p>
+
+        <h5>HỦY BỎ</h5>
+
+        <p>
+            Bằng cách thực hiện việc đặt chỗ, đăng ký chỗ hoặc giữ chỗ qua Trang Web, bạn chấp nhận và đồng ý với các điều khoản và điều kiện của các Nhà Cung Cấp liên quan, bao gồm các chính sách liên quan đến hủy bỏ và/hoặc vắng mặt, hoặc đối với các yêu cầu cụ thể mà bạn có thể đưa ra cho Nhà Cung Cấp. Airnova không chịu trách nhiệm cho bất kỳ vi phạm các điều khoản và điều kiện này mà đã có sự đồng ý giữa Nhà Cung Cấp và Người Dùng, hoặc dựa trên các yêu cầu cụ thể của Người Dùng, vì vậy xin vui lòng đọc các điều khoản và điều kiện của các Nhà Cung Cấp một cách cẩn thận.
+        </p>
+        
+        <p>
+            Liên quan đến sự hủy bỏ đặt chỗ của Người Dùng mà đã được hoàn thành, Airnova có thể giữ lại hoặc lấy một phần của số tiền đã thanh toán để bồi hoàn những chi phí đã phát sinh liên quan đến việc huỷ bỏ.
+        </p>
+        
+        <h5>NHỮNG YÊU CẦU ĐẶC BIỆT</h5>
+        
+        <p>
+            Trong trường hợp có bất kỳ yêu cầu đặc biệt nào liên quan đến việc đặt chỗ (ví dụ: phòng ở có thể đưa xe lăn vào dễ dàng, hỗ trợ xe lăn tại thời điểm giao vé, thay đổi tên, thay đổi ngày, tích điểm “người bay thường xuyên” hoặc tương tự), Người Dùng có thể thêm các yêu cầu khi thực hiện đặt chỗ trên Trang Web hoặc liên hệ trực tiếp với Nhà Cung Cấp (nếu áp dụng). Các yêu cầu sẽ được phục vụ theo quyết định của Nhà Cung Cấp và Airnova, trên cơ sở sự có sẵn và các yếu tố khác.
+        </p>
+        
+        <p>
+            Trong trường hợp đổi lịch bay (bao gồm nhưng không giới hạn đối với các thay đổi về ngày giờ, chặng bay và/hoặc hành khách) do người dùng yêu cầu, Airnova bảo lưu quyền được hủy bất kỳ đặt chỗ mới nào được hình thành thông qua tiến trình đổi lịch bay nếu phát hiện đặt chỗ ban đầu không còn hiệu lực (vd. đặt chỗ đã được sử dụng hoặc hoàn tiền).
+        </p>
+        
+        <h5>LỜI KHUYÊN VỀ DU LỊCH</h5>
+        
+        <p>
+            Bằng cách hiển thị các điểm đến cụ thể, Airnova không tuyên bố hoặc bảo đảm rằng việc đến các điểm này là nên hoặc không có rủi ro và Airnova không chịu trách nhiệm pháp lý về thiệt hại hay tổn thất có thể xảy ra do việc du lịch đến các điểm đó. Trong mọi trường hợp Airnova sẽ không chịu trách nhiệm pháp lý về bất kỳ sự cố bất lợi xảy ra trong suốt chuyến đi hoặc sự lưu trú của bạn. Bạn tự chịu trách nhiệm về việc lựa chọn chuyến du lịch, lộ trình và điểm đến, cho toàn bộ hành trình của bạn. Airnova không chịu trách nhiệm cho bất kỳ tổn thất nào xảy ra khi bạn không mang theo giấy tờ cần thiết cho chuyến du lịch, chẳng hạn như hộ chiếu của bạn.
+        </p>
+        
+        <p>
+            Nếu bạn mua vé khứ hồi trong cùng một mã đặt chỗ hàng không (Mã tên hành khách, được viết tắt là PNR), vé cả chiều đi và chiều về phải được sử dụng đầy đủ, như được nêu rõ trong hành trình của vé điện tử Airnova. Nếu chỉ sử dụng (i) chiều đi hoặc chiều về; hoặc (ii) sử dụng một phần của chuyến bay khứ hồi, có thể khiến vé còn lại mất hiệu lực và không thể hoàn tiền. Airnova sẽ không chịu bất cứ trách nhiệm nào nếu hành khách vi phạm những điều khoản và điều kiện này.
+        </p>
+        
+        <p>
+            Bạn sẽ hoàn toàn có trách nhiệm xin cấp, giữ gìn và sẵn sàng xuất trình giấy phép du lịch hợp lệ và còn hiệu lực hoặc các giấy tờ cần thiết cho việc nhập cảnh của bạn ở nước ngoài (bao gồm, nhưng không giới hạn, thị thực nhập cảnh hoặc các loại giấy phép du lịch khác, dùng để quá cảnh hoặc cho mục đích khác) trước khi hoàn thành việc đặt chỗ hoặc đặt phòng cho chuyến du lịch của bạn phù hợp với pháp luật hiện hành của quốc gia bạn khởi hành, đi đến, ngang qua hoặc quá cảnh. Airnova không có nghĩa vụ và trách nhiệm phải thông báo cho bạn về những điều cần chuẩn bị khi đi du lịch cũng như các giấy phép cần thiết để bạn có thể thực hiện chuyến đi của mình. Airnova có quyền giới hạn trách nhiệm pháp lý của mình trong trường hợp có bất kỳ tổn thất nào nảy sinh bắt nguồn hoặc liên quan đến các giấy phép du lịch của bạn.
+        </p>
+        <h5>XẾP HẠNG</h5>
+
+        <p>
+            Những xếp hạng được hiển thị trên Trang Web chỉ để cung cấp thông tin cho Người Dùng, và những xếp hạng hiện hữu đều dựa trên các thông tin do các bên thứ ba cung cấp, chẳng hạn như các nhà cung cấp, Người Dùng hoặc các trang web đánh giá khác. Chúng tôi không xác minh các xếp hạng được đưa ra và do đó không chịu trách nhiệm về tính chính xác của các xếp hạng hiện tại. Chúng tôi, tại đây, tuyên bố khước từ bất kỳ khiếu nại, tổn thất hoặc trách nhiệm pháp lý nào đối với các xếp hạng hiển thị trên Trang Web.
+        </p>
+        
+        <h5>GIÁ CẢ VÀ KHUYẾN MÃI</h5>
+        
+        <p>
+            Tùy từng thời điểm, chúng tôi có thể chào mức giá thấp hơn và/hoặc chương trình khuyến mãi. Vui lòng lưu ý rằng những mức giá thấp hơn và chương trình khuyến mãi như vậy liên quan đến các điều kiện và yêu cầu khác nhau, ví dụ, liên quan đến việc đặt chỗ và chính sách hoàn trả.
+        </p>
+        
+        <h5>PHÍ BỔ SUNG & HOÀN TRẢ</h5>
+        
+        <p>
+            Mỗi mức giá niêm yết trên Trang Web chỉ có hiệu lực với các điều kiện nhất định và các mức giá này có thể thay đổi tùy thuộc vào tình trạng còn chỗ, thời gian lưu trú và/hoặc chỉ tiêu chỗ. Giá có sẵn có thể bao gồm các loại thuế bổ sung và các chi phí khác nhưng trong một số trường hợp giá có thể không bao gồm thuế và phí dịch vụ; Người Dùng đồng ý rằng họ có trách nhiệm xác minh tổng chi phí thanh toán và các điều khoản và các chi tiết khác khi email xác nhận được gửi đến Người Dùng.
+        </p>
+        
+        <p>
+            Người Dùng phải xác minh việc đặt chỗ trên tờ đặt chỗ; Người Dùng có thể hủy bỏ đặt chỗ bất cứ lúc nào trước khi có xác nhận đặt chỗ cuối cùng. Giá được hiển thị chi tiết để Người Dùng có thể thấy số tiền phải trả, bất kỳ chi phí bổ sung do việc sử dụng thẻ tín dụng hoặc phí liên ngân hàng đánh trên các chi phí vận chuyển sẽ được tính cho Người Dùng. Nếu có sự thiếu hụt nhỏ trong số tiền đã thanh toán đó thì Airnova có thể cung cấp một thông báo email về khoản thiếu hụt đó để Người Dùng thanh toán.
+        </p>
+        
+        <p>
+            Trong trường hợp một Người Dùng hủy bỏ đặt chỗ trước khi thanh toán đầy đủ bất kỳ khoản thiếu hụt đang tồn tại nào, Airnova có toàn quyền quyết định trong việc hoàn trả số tiền đã thanh toán hoặc hoàn trả lại số tiền sau khi Airnova trừ đi các chi phí phát sinh do việc không thanh toán các khoản thiếu hụt của Người Dùng theo các thủ tục do Airnova quy định.
+        </p>
+        
+        <p>
+            Nếu Người Dùng có bất kỳ nghi ngờ nào về dịch vụ, Người Dùng có thể liên hệ với bộ phận dịch vụ khách hàng của Airnova (trong thời gian làm việc của bộ phận dịch vụ khách hàng được Airnova quy định).
+        </p>
+        
+        <p>
+            Đối với các yêu cầu hoàn vé khác, tùy thuộc vào quyền lợi thuộc về bạn, cũng như chính sách của Airnova và hãng hàng không, Airnova trước tiên sẽ kiểm tra và xác minh mã đặt chỗ trước khi hoàn lại số tiền mà bạn đã trả, trừ đi bất kỳ khoản chi phí nào Airnova ghi nhận, bao gồm nhưng không giới hạn bởi phụ phí xử lý và quản lý, phí chuyển khoản liên ngân hàng, phí thẻ tín dụng, v.v. ("Số tiền hoàn trả"). Sau khi xác minh thành công bởi Airnova, khoản tiền hoàn trả sẽ được cung cấp cho bạn dưới dạng chứng từ điện tử (ví dụ: Phiếu giảm giá Airnova, Điểm Airnova và / hoặc Phiếu voucher từ hãng hàng không / nhà cung cấp).
+        </p>
+        
+        <p>
+            Airnova sẽ không chịu trách nhiệm hoặc có nghĩa vụ pháp lý cho bất kỳ việc phát hành vé điện tử không thực hiện được nào do số tiền Người Dùng chuyển thanh toán không chính xác. Bất kỳ việc chuyển tiền nào được thực hiện ngoài thời hạn chuyển tiền sẽ dẫn đến việc không đặt chỗ được. Đối với việc chuyển khoản liên ngân hàng thời gian thực, bạn phải sử dụng máy ATM. Sau khi hoàn thành việc chuyển khoản liên ngân hàng, xin vui lòng xác nhận thanh toán của bạn bằng cách điền vào phiếu xác nhận thanh toán.
+        </p>
+        
+        <p>
+            Theo các điều khoản của tiện ích xử lý thanh toán, về cơ bản chúng tôi sẽ xử lý khoản hoàn trả của Người Dùng, cả tự nguyện và không tự nguyện, bằng cách hoàn trả khoản thanh toán thông qua phương thức thanh toán ban đầu mà bạn đã sử dụng để thanh toán cho đặt chỗ đã được xác nhận.
+        </p>
+        
+        <p>
+            Nếu khoản tiền hoàn lại của Người Dùng không thể được xử lý thông qua phương thức thanh toán ban đầu mà Người Dùng đã sử dụng hoặc phương thức thanh toán ban đầu Người Dùng đã sử dụng để thanh toán cho đặt phòng đã được xác nhận là chuyển khoản ngân hàng hay thực hiện thanh toán qua các đối tác thanh toán ngoại tuyến của chúng tôi, chúng tôi sẽ chỉ chuyển khoản tiền hoàn lại cho một tài khoản ngân hàng hợp lệ đã được chỉ định theo thông tin mà Người Dùng đã đăng ký trên Trang Web khi gửi yêu cầu hoàn tiền (“Tài Khoản Ngân Hàng Được Chỉ Định”).
+        </p>
+        
+        <p>
+            Chúng tôi có quyền giữ lại và từ chối thực hiện hoàn tiền vào Tài Khoản Ngân Hàng Được Chỉ Định không có thông tin cá nhân trùng khớp hoặc trong trường hợp chúng tôi cho rằng hoặc có cơ sở hợp lý để nghi ngờ rằng yêu cầu hoàn tiền có thể vi phạm quy định pháp luật về rửa tiền, tài trợ khủng bố, gian lận hoặc các hành vi phạm tội khác hoặc có thể tiềm ẩn hành vi trái pháp luật.
+        </p>
+        
+        <p>
+            Chúng tôi có thể báo cáo bất kỳ hành vi đáng ngờ nào cho cơ quan chức năng liên quan (nếu có) nhằm tuân thủ các nghĩa vụ pháp lý của chúng tôi theo pháp luật hiện hành. Chúng tôi sẽ không chịu trách nhiệm về tính đúng đắn, chính xác hoặc đầy đủ của thông tin mà Người Dùng cung cấp.
+        </p>
+        
+        <p>
+            Trong giới hạn được pháp luật hiện hành cho phép, nếu:
+            <ul>
+                <li>(a) Chúng tôi không thể chuyển hoàn khoản thanh toán bằng phương thức thanh toán ban đầu của bạn cho dù lý do là bởi nhà cung cấp dịch vụ xử lý thanh toán, Airnova hoặc chính bạn gây ra.</li>
+                <li>(b) Bạn không cung cấp cho chúng tôi các thông tin chi tiết cần thiết nhằm cho phép chúng tôi xử lý khoản hoàn tiền của bạn, không đăng ký hoặc không thêm Tài Khoản Ngân Hàng Được Chỉ Định của bạn trên Trang Web.</li>
+                <li>(c) Không thể liên lạc được với bạn hoặc bạn không trả lời chúng tôi sau khi chúng tôi đã nỗ lực để liên hệ với bạn.</li>
+            </ul>
+            Chúng tôi sẽ xem như không thể liên lạc được với bạn để xử lý yêu cầu hoàn tiền của bạn và Airnova được quyền ngừng xử lý yêu cầu của bạn.
+        </p>
+        
+        <p>
+            Vui lòng <a href="#">nhấp vào đây</a> để xem lại các điều khoản và điều kiện của chúng tôi đối với Tài Khoản Ngân Hàng Được Chỉ Định, điều khoản này cũng chi phối việc bạn sử dụng Trang Web.
+        </p>
+        
+        <p>
+            Trong trường hợp lỗi hệ thống của Chúng tôi dẫn đến việc không xuất vé được hoặc các lý do khác dẫn đến việc vé không được xuất mặc dù Bạn đã trả tiền, Chúng tôi có quyền hủy đặt chỗ của Bạn và hoàn tiền tự động cho Bạn theo đúng phương thức thanh toán ban đầu.
+        </p>
+        <h5>CHI TIẾT VÀ THỦ TỤC THANH TOÁN</h5>
+        <p>Các khoản thanh toán được thực hiện theo số tiền và loại tiền tệ như đã nêu mà không có phí bảo lãnh ngân hàng hoặc bất kỳ khoản phí nào khác do Airnova thu.</p>
+        <p>Airnova không thu thuế hoặc lệ phí. Việc áp bất kỳ khoản thuế nào sẽ do Người Dùng chịu.</p>
+        <p>Đối với tất cả các hình thức đặt phòng, bạn phải thực hiện thanh toán trong thời hạn quy định. Nếu việc thanh toán không được thực hiện thì Airnova bảo lưu quyền hủy bỏ tất cả các việc giữ chỗ hoặc huỷ bỏ quá trình đặt chỗ.</p>
+        <p>Phương thức thanh toán bao gồm nhưng không giới hạn gồm chuyển khoản ngân hàng và thẻ tín dụng. Đối với các thanh toán bằng chuyển khoản ngân hàng, bạn phải cung cấp biên nhận chuyển khoản ngân hàng làm bằng chứng thanh toán cho việc đặt phòng trước được liệt kê trong email xác nhận của Airnova. Bạn phải tuân thủ quy trình nêu trong email xác nhận.</p>
+        <p>Đối với phương thức thanh toán khác như thẻ tín dụng, bạn phải tuân thủ quy trình theo quy định của Airnova và/hoặc các nhà cung cấp dịch vụ thanh toán có liên quan.</p>
+        <p>Sau khi bạn thực hiện thanh toán đầy đủ, Airnova sẽ đưa ra lệnh đặt chỗ và cấp một mã số đặt chỗ, kèm theo các thông tin:</p>
+        <ul>
+        <li>Mã Đặt Chỗ;</li>
+        <li>Tên Khách Hàng;</li>
+        <li>Số Đặt Chỗ;</li>
+        <li>Thông Tin Đặt Chỗ; và</li>
+        <li>Số Điện Thoại / Số Máy Lẻ.</li>
+        </ul>
+        
+        <h5>THANH TOÁN BẰNG THẺ TÍN DỤNG & GIAN LẬN</h5>
+        <p>Đối với việc thanh toán cho đặt chỗ thông qua Trang Web này, thẻ tín dụng của bạn sẽ được Airnova lập biên nhận thanh toán cho giá đầy đủ tại thời điểm đặt chỗ và xác nhận đặt chỗ (bất kỳ sự hoàn trả nào có thể được đưa ra đều sẽ phụ thuộc vào các điều kiện của việc đặt chỗ hiện hữu). Bạn bắt buộc phải kiểm tra các thông tin đặt chỗ kỹ lưỡng trước mỗi lần bạn thực hiện đặt chỗ. Airnova sẽ xử lý bất kỳ sự hoàn trả nào, nếu có, trong một thời hạn hợp lý. Đối với một số đặt chỗ, Airnova có thể không tính phí trên thẻ tín dụng của bạn và yêu cầu thanh toán trực tiếp cho các Nhà Cung Cấp có liên quan. Để bảo vệ và mã hóa các thông tin thẻ tín dụng của bạn khi các thông tin đó được chuyển cho chúng tôi, chúng tôi sử dụng công nghệ mã hóa như Transport Layer Security (“TLS”) hoặc Secure Sockets Layer (“SSL”) cho các dịch vụ của chúng tôi.</p>
+        <p>Trong trường hợp bị gian lận thẻ tín dụng hoặc người khác sử dụng trái phép thẻ tín dụng của bạn, bạn có trách nhiệm liên hệ ngân hàng hoặc đơn vị phát hành thẻ của mình ngay lập tức ngay khi nhận biết về hành vi gian lận hoặc sử dụng trái phép thẻ tín dụng này. Trong trường hợp này, Airnova khước từ trách nhiệm đối với bất kỳ trường hợp gian lận thẻ tín dụng hoặc việc sử dụng trái phép thẻ tín dụng của bạn do người khác gây ra, bất kể trong trường hợp gian lận hoặc việc sử dụng trái phép này được tiến hành thông qua các dịch vụ của Airnova (bao gồm, nhưng không giới hạn, tiện ích AirnovaQuick). Airnova không có nghĩa vụ bồi thường hoặc hoàn trả khoản tiền thanh toán được xem như là kết quả của việc gian lận này. Chúng tôi có thể xem xét và chấp thuận bù đắp cho bạn dưới một hình thức khác như là cách thể hiện thiện chí của chúng tôi.</p>
+        
+        <h5>CÁC QUYỀN VÀ NGHĨA VỤ</h5>
+        <p>Airnova, tại đây, cấp cho Người Dùng một số quyền giới hạn (cấu thành một “Sự Cấp Phép Giới Hạn”) mà không được chuyển giao, chuyển nhượng để truy cập và sử dụng Trang Web trong phạm vi được xác định rõ ràng bởi các Điều Khoản. Liên quan đến Sự Cấp Phép Giới Hạn này, chúng tôi không cấp cho bạn bất kỳ quyền hoặc sự cho phép nào khác đối với việc sử dụng Trang Web; các quyền hoặc sự cho phép không được cấp một cách rõ ràng, hoàn toàn thuộc sở hữu của Airnova hoặc chủ sở hữu bên thứ ba khác đối với sự cấp phép đó. Nội dung hiện hữu trên Trang Web (bao gồm cả các nền phần mềm được sử dụng để cung cấp Nội Dung) hoàn toàn thuộc sở hữu của Airnova hoặc nhà cung cấp và các nhà cung cấp dịch vụ của Airnova, bao gồm nhưng không giới hạn Nhà Cung Cấp của Airnova (nếu thích hợp).</p>
+        <p>Bạn có thể sử dụng Trang Web để đặt chỗ và, tại đây bạn tuyên bố và đảm bảo rằng bạn sẽ không đưa ra các yêu cầu đặt chỗ sai hoặc có tính đầu cơ để chặn trước các đặt chỗ hiện có. Bạn cam kết rằng các thông tin thanh toán bạn cung cấp là đúng sự thật và hoàn toàn chính xác. Bạn cũng đảm bảo cung cấp địa chỉ thư điện tử, địa chỉ gửi thư và/hoặc các chi tiết về thông tin liên lạc của bạn đúng đắn và chính xác.</p>
+        <p>Liên quan đến các Điều Khoản Sử Dụng của Trang Web, bạn đồng ý không sử dụng Trang Web hoặc Nội Dung cho mục đích thương mại hoặc sử dụng trực tiếp hay gián tiếp cho bất cứ mục đích gì ngoài việc sử dụng cá nhân hoặc cho các mục đích trái pháp luật (bị pháp luật cấm) hoặc thực hiện bất cứ hành động nào vi phạm các Điều Khoản.</p>
+        <h5>QUYỀN ĐỐI VỚI NỘI DUNG NGƯỜI DÙNG</h5>
+        <p>Bạn đồng ý rằng Airnova có quyền hiển thị, chỉnh sửa hoặc xóa các đánh giá mà bạn cung cấp trên Trang Web. Bạn đảm bảo rằng nội dung đánh giá của bạn là chính xác và không vi phạm bất kỳ quyền nào của bên thứ ba.</p>
+        
+        <h5>HẠN CHẾ SỬ DỤNG</h5>
+        <p>Bạn cam kết không sử dụng Trang Web cho các hoạt động bất hợp pháp hoặc vi phạm quyền của Airnova và bên thứ ba. Mọi hành động gây gián đoạn hoạt động của Trang Web đều bị cấm.</p>
+        
+        <h5>QUYỀN SỞ HỮU TRÍ TUỆ</h5>
+        <p>Airnova sở hữu toàn bộ nội dung và quyền sở hữu trí tuệ trên Trang Web. Bạn không được sao chép, sửa đổi hoặc phân phối nội dung này khi chưa có sự đồng ý của Airnova.</p>
+        <h5>QUYỀN ĐỐI VỚI NỘI DUNG NGƯỜI DÙNG</h5>
+        <p>Bằng sự hoàn tất việc đặt chỗ, bạn, tại đây, đồng ý nhận thư điện tử mời bạn tham gia cung cấp các đánh giá hoặc đánh giá nội dung liên quan đến việc lựa chọn các Nhà Cung Cấp. Airnova có quyền quyết định trong việc liệu ý kiến của bạn có được xuất hiện trong đánh giá hay không. Airnova có thể hiển thị ý kiến mà có chứa bình luận, mức độ dịch vụ và tên của bạn.</p>
+        <p>Khi cung cấp một đánh giá, bạn đồng ý đảm bảo rằng:</p>
+        <ul>
+        <li>Bạn sở hữu và kiểm soát mọi quyền liên quan đến các đánh giá mà bạn cung cấp cho Trang Web;</li>
+        <li>Nội dung của đánh giá này là chính xác và không chứa các tuyên bố sai lệch; và</li>
+        <li>Sử dụng hoặc thực hiện hoặc chuyển tải nội dung của đánh giá là không vi phạm các Điều khoản, Hướng dẫn Cộng Đồng của Airnova hoặc các luật và quy định liên quan, bạn không vi phạm quyền của bất kỳ bên thứ ba nào, và bạn không gây tổn hại cho bất kỳ bên nào.</li>
+        </ul>
+        <p>Bạn phải chịu mọi trách nhiệm về nội dung của những đánh giá mà bạn cung cấp hoặc đưa ra. Bạn cho phép Airnova hành động khi có một bên vi phạm các quyền của bạn hoặc quyền của Airnova.</p>
+        <p>Nội dung đánh giá được cung cấp sẽ được coi là không bao gồm các thông tin bí mật và Airnova sẽ không có nghĩa vụ phải xử lý nội dung đánh giá như thông tin bí mật. Không làm giới hạn các quy định trong các Điều Khoản, Airnova được toàn quyền quyết định trong việc sử dụng các nội dung đánh giá mà được xét thấy là thích hợp, bao gồm nhưng không giới hạn ở việc loại bỏ, cắt, sửa đổi, hoặc ẩn khỏi màn hình hiển thị. Airnova sẽ không có nghĩa vụ phải trả tiền cho các nội dung mà bạn cung cấp trong đánh giá của bạn, bao gồm nhưng không giới hạn ở nội dung đánh giá đã được thay đổi, loại bỏ hoặc cắt lại. Airnova sẽ không có nghĩa vụ phải cung cấp hoặc bao gồm hoặc đề cập đến tác giả hoặc các bên thứ ba khác.</p>
+        <p>Trong mọi trường hợp, liên quan đến nội dung của các đánh giá, bạn đồng ý rằng:</p>
+        <ul>
+        <li>Bạn không yêu cầu bất kỳ quyền hoặc thông tin nhận dạng gì trong bất kỳ tác phẩm phái sinh nào;</li>
+        <li>Bạn cho phép công bố, sử dụng, loại bỏ, sửa đổi, nhân bản hoặc khai thác nội dung đánh giá do Airnova và nhân viên, người kế thừa và người nhận chuyển giao của Airnova thực hiện;</li>
+        <li>Bạn, tại đây, khước từ bất kỳ quyền nào và đồng ý không đòi hỏi bất kỳ quyền nào trong nội dung đánh giá; và</li>
+        <li>Bạn, tại đây, đồng ý bồi thường thiệt hại và giữ cho Airnova và nhân viên, các công ty liên kết, người nắm giữ quyền, người thay thế, và người nhận chuyển giao của chúng tôi không bị tổn hại từ bất kỳ khiếu nại nào liên quan đến nội dung của những đánh giá này.</li>
+        </ul>
+        
+        <h5>HẠN CHẾ SỬ DỤNG</h5>
+        <p>Bạn, tại đây, đồng ý không sử dụng Trang Web hoặc Nội Dung cho các hoạt động bất hợp pháp hoặc trái phép. Bạn đồng ý rằng bạn sẽ không sử dụng bất kỳ thiết bị, phần mềm, hoặc các công nghệ nào khác có thể cản trở hoặc cố tình gây cản trở hoạt động của Trang Web này. Bạn đồng ý không sử dụng Trang Web này hoặc Nội Dung của nó cho các mục đích thương mại. Bạn đồng ý không tìm kiếm, tạo ra, truy vấn, sử dụng hoặc gửi các nhân tố tự động hoặc các hình thức công nghệ khác để thu thập hoặc lấy thông tin từ Trang Web này, hoặc can thiệp Trang Web này bằng cách khác.</p>
+        
+        <h5>QUYỀN SỞ HỮU TRÍ TUỆ</h5>
+        <p>Airnova sở hữu tất cả các Quyền Sở Hữu Trí Tuệ trên Trang Web này. Tất cả các thông tin và tài liệu, bao gồm nhưng không giới hạn ở phần mềm, văn bản, dữ liệu, đồ họa, hình ảnh, âm thanh, video, nhãn hiệu, logo, biểu tượng, mã html và các mã khác trên Trang Web này đều bị cấm công bố, sửa đổi, sao chép, nhân bản, tạo phó bản hoặc thay đổi trong bất kỳ cách nào ngoài phạm vi của Trang Web này mà không có sự cho phép của Airnova. Nếu bạn vi phạm những quyền này, Airnova bảo lưu quyền yêu cầu bạn bồi thường dân sự cho toàn bộ thiệt hại hoặc tổn thất mà Airnova phải gánh chịu. Những hành vi vi phạm cũng có thể cấu thành tội phạm hình sự.</p>
+        <p>Airnova và/hoặc các công ty liên kết của Airnova sở hữu một số quyền sở hữu trí tuệ (“Quyền Sở Hữu Trí Tuệ”), bao gồm nhưng không giới hạn ở các tên miền, Trang Web, nhãn hiệu, nội dung, quyền tác giả, nhãn hiệu dịch vụ, logo, biểu tượng hoặc thiết kế khác v.v. Không có bất cứ quy định nào trong Điều Khoản này được hiểu là trao cho bạn một sự cho phép hoặc bất kỳ quyền nào, ngụ ý hay theo cách khác, để sử dụng, chiếm hữu, phân phối hoặc sửa đổi bất kỳ Quyền Sở Hữu Trí Tuệ nào của Airnova.</p>
+        <p>Trang Web chứa Quyền Sở Hữu Trí Tuệ của Airnova, bao gồm nhưng không giới hạn ở văn bản, phần mềm, ảnh, đồ họa, video, âm nhạc và âm thanh. Toàn bộ Nội Dung của Trang Web được bảo hộ theo pháp luật về quyền tác giả. Chúng tôi và các bên cấp phép của chúng tôi sở hữu quyền tác giả và/hoặc các quyền khác thông qua việc lựa chọn, phối hợp, sắp xếp, và sửa chữa Nội Dung và các nội dung ban đầu.</p>
+        <p>Chúng tôi có thể cung cấp các liên kết đến các trang web khác được duy trì bởi các bên khác, bằng cách nhấn vào liên kết, bạn, tại đây, tuyên bố, xác nhận và đồng ý rằng hành động đó là hành động tự nguyện của bạn để xem hoặc truy cập các trang web khác đó mà Airnova không kiểm soát hoặc chịu trách nhiệm.</p>
+        <p>Airnova, trong quá trình phát triển Trang Web, chuẩn bị mã nguồn và thực hiện phần mềm hỗ trợ, có thể cấp phép sử dụng phần mềm mã nguồn mở từ bên thứ ba thông qua Giấy Phép Công Cộng GNU (GNU General Public Licence). Mọi việc sử dụng phần mềm mã nguồn mở và các quyền sở hữu trí tuệ của bên thứ ba bởi Airnova là có giấy phép hoặc sự cho phép cần thiết.</p>
+        <h5>KHIẾU NẠI VỀ SỰ VI PHẠM QUYỀN SỞ HỮU TRÍ TUỆ</h5>
+        <p>Nếu có bằng chứng sự xâm phạm Quyền Sở Hữu Trí Tuệ của bạn, bạn hoặc người đại diện của mình có thể gửi thông báo với các thông tin chi tiết sau:</p>
+        <ul>
+        <li>Tên và địa chỉ của Người Gửi;</li>
+        <li>Nếu không phải chủ sở hữu, cung cấp thông tin của chủ sở hữu;</li>
+        <li>Số điện thoại, email của Người Gửi;</li>
+        <li>Bằng chứng về sự vi phạm, bao gồm địa chỉ trực tuyến;</li>
+        <li>Yêu cầu loại bỏ hoặc vô hiệu hóa nội dung vi phạm;</li>
+        <li>Tuyên bố trung thực về vi phạm;</li>
+        <li>Tuyên bố về tính chính xác của thông tin cung cấp;</li>
+        <li>Cam kết bồi thường nếu có thông tin gian lận.</li>
+        </ul>
+        
+        <h5>TUYÊN BỐ TỪ CHỐI</h5>
+        <p>Dịch vụ và nội dung trên trang web này được cung cấp theo nguyên trạng và như sẵn có. Chúng tôi không bảo đảm rằng:</p>
+        <ul>
+        <li>Trang web không bị gián đoạn hoặc lỗi;</li>
+        <li>Không có virus hoặc phần mềm độc hại;</li>
+        <li>Nội dung chính xác hoặc phù hợp với mục đích sử dụng.</li>
+        </ul>
+        <p>Việc sử dụng trang web là rủi ro của riêng bạn, chúng tôi không chịu trách nhiệm về bất kỳ tổn thất nào.</p>
+        
+        <h5>GIỚI HẠN TRÁCH NHIỆM</h5>
+        <p>Chúng tôi sẽ không chịu trách nhiệm cho bất kỳ thiệt hại nào phát sinh từ việc sử dụng trang web, bao gồm nhưng không giới hạn ở thiệt hại kinh tế, mất dữ liệu hoặc gián đoạn kinh doanh.</p>
+        
+        <h5>BỒI THƯỜNG</h5>
+        <p>Bạn đồng ý bồi thường và giữ cho Airnova và các bên liên quan không bị tổn hại từ bất kỳ khiếu nại nào phát sinh từ việc sử dụng trang web hoặc nội dung vi phạm.</p>
+        
+        <h5>LIÊN KẾT VÀ NỘI DUNG CỦA BÊN THỨ BA</h5>
+        <p>Trang Web có thể chứa các liên kết đến các trang web do các bên thứ ba vận hành. Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung, quyền riêng tư hoặc các hoạt động khác của các trang web đó. Bất kỳ liên kết nào trên Trang Web này không có nghĩa là chúng tôi chứng thực hoặc bảo đảm cho nội dung của trang web liên kết.</p>
+        <p>Chúng tôi không có nghĩa vụ xem xét, kiểm tra hoặc theo dõi nội dung được cung cấp bởi các bên thứ ba và không chịu trách nhiệm cho bất kỳ tổn thất hoặc thiệt hại nào phát sinh từ việc sử dụng các trang web hoặc nguồn bên ngoài đó. Bạn đồng ý miễn trừ chúng tôi khỏi mọi khiếu nại liên quan đến việc sử dụng các trang web hoặc nội dung của bên thứ ba.</p>
+        
+        <h5>CHẤM DỨT</h5>
+        <p>Chúng tôi có quyền đơn phương chấm dứt, đình chỉ hoặc sửa đổi Trang Web, dịch vụ hoặc bất kỳ phần nào của nó vào bất kỳ thời điểm nào mà không cần thông báo trước.</p>
+        <p>Sau khi chấm dứt, các nghĩa vụ của bạn theo Điều Khoản này vẫn tiếp tục có hiệu lực, bao gồm nhưng không giới hạn ở bảo đảm, bồi thường và miễn trừ trách nhiệm. Chúng tôi không chịu trách nhiệm đối với bạn hoặc bất kỳ bên thứ ba nào về việc chấm dứt quyền truy cập của bạn vào Trang Web.</p>
+        
+        <h5>QUYỀN RIÊNG TƯ</h5>
+        <p>Chính sách Quyền Riêng Tư của chúng tôi là một phần không thể tách rời của Điều Khoản Sử Dụng này. Vui lòng xem Chính sách Quyền Riêng Tư để biết thêm chi tiết về cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn.</p>
+        
+        <h5>LUẬT ĐIỀU CHỈNH</h5>
+        <p>Các Điều Khoản này sẽ được điều chỉnh và giải thích theo luật pháp Việt Nam.</p>
+        
+        <h5>GIẢI QUYẾT TRANH CHẤP</h5>
+        <p>Nếu có tranh chấp phát sinh liên quan đến Điều Khoản này, các bên sẽ cố gắng giải quyết thông qua thương lượng trong vòng 60 ngày kể từ khi tranh chấp phát sinh. Nếu không đạt được thỏa thuận, tranh chấp sẽ được đưa ra cơ quan có thẩm quyền giải quyết tại Việt Nam.</p>
+        
+        <h5>CÁC QUY ĐỊNH CHUNG</h5>
+        <ul>
+        <li>Các Điều Khoản này thay thế mọi thỏa thuận trước đây giữa bạn và Airnova.</li>
+        <li>Nếu một điều khoản bị tòa án tuyên bố không có hiệu lực, các điều khoản còn lại vẫn tiếp tục có hiệu lực.</li>
+        <li>Việc chúng tôi không thực thi bất kỳ quyền nào không có nghĩa là chúng tôi từ bỏ quyền đó.</li>
+        <li>Bạn không được chuyển nhượng quyền và nghĩa vụ của mình theo Điều Khoản này nếu không có sự đồng ý của chúng tôi.</li>
+        <li>Chúng tôi có thể sửa đổi Điều Khoản bất kỳ lúc nào bằng cách đăng bản cập nhật trên Trang Web.</li>
+        <li>Không bên thứ ba nào có quyền thực thi các Điều Khoản này.</li>
+        </ul>
+        <h5>BẤT KHẢ KHÁNG</h5>
+        <p>Airnova sẽ không chịu trách nhiệm đối với việc không thực hiện hoặc vi phạm các Điều Khoản này, chẳng hạn như đối với giao dịch thất bại, hạn chế truy cập vào Trang Web, hoặc bất kỳ thiệt hại hoặc tổn hại nào gây ra cho Người Dùng vì bất kỳ hành động hoặc tình trạng nào nằm ngoài khả năng kiểm soát hợp lý của Bạn hoặc Chúng Tôi (“Sự Kiện Bất Khả Kháng”). Những Sự Kiện Bất Khả Kháng bao gồm nhưng không giới hạn ở thiên tai (lũ lụt, động đất), dịch bệnh, bạo loạn, ban bố tình trạng chiến tranh, chiến tranh, hành động quân sự, hành động khủng bố, cấm vận, trừng phạt, thay đổi pháp luật hay quy định, sấm sét, bão/siêu bão/lốc xoáy, các cuộc đình công, biểu tình, hãng máy bay hoặc khách sạn phá sản hoặc vỡ nợ v.v.</p>
+        <p>Airnova sẽ không chịu trách nhiệm cho bất kỳ thiệt hại hoặc tổn thất nào bị gây ra bởi bất kỳ phương tiện nào cho bất kỳ bên nào nếu Airnova không thể xử lý việc đặt chỗ của bạn vì những Sự Kiện Bất Khả Kháng.</p>
+        
+        <h5>GIỚI THIỆU VỀ AIRNOVA – HỎI & ĐÁP</h5>
+        <p>Nếu bạn có thêm bất kỳ câu hỏi nào xin vui lòng tham khảo mục Hỏi & Đáp.</p>
+        
+        <h5>NỘI DUNG KHÁC</h5>
+        <p>Một số sản phẩm được cung cấp qua Nền tảng này tuân theo các điều khoản và điều kiện có thể được truy cập tại đây ("TnC thứ cấp"). Sự chấp nhận của bạn đối với Điều khoản và Điều kiện này cũng sẽ cấu thành sự chấp nhận cho TnC thứ cấp. Nếu bạn không chắc chắn liệu đặt phòng của bạn có tuân theo TnC thứ cấp hay không, vui lòng liên hệ với chúng tôi để xác nhận trước khi bạn thực hiện giao dịch.</p>                
+
+    </div>
+    
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-row">
+                <!-- Cột 1 -->
+                <div class="col-md-4 footer-col">
+                    <img src="img/Logo_White.png" alt="Airnova" class="mb-3 logo-footer">
+                    <img src="img/BCT.png" alt="BTC" class="bct-icon">
+                    <div class="iata-iso">
+                        <img src="img/icon.png" alt="IATA" class="iata-icon">
+                        <img src="img/ISO.png" alt="ISO" class="iso-icon">
+                    </div>
+                    <h5 class="mt-3">Đối tác thanh toán</h5>
+                    <div class="payment-methods">
+                        <div><img src="img/1.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/2.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/3.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/4.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/5.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/6.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/7.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/8.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/9.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/10.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/11.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/12.png" alt="Thanh toán 1"></div>
+                    </div>
+                </div>
+                <!-- Cột 2 -->
+                <div class="col-md-4 footer-col about">
+                    <h5>Về Airnova</h5>
+                    <ul class="list-unstyled mt-4">
+                        <li><a href="#">Cách đặt chỗ</a></li>
+                        <li><a href="#">Thông tin hỗ trợ</a></li>
+                        <li><a href="#">Liên hệ trợ giúp</a></li>
+                    </ul>
+                    <h5 style="margin-top: 100px;">Theo dõi chúng tôi trên</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                        <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="#"><i class="bi bi-tiktok"></i> TikTok</a>
+                        <a href="#"><i class="bi bi-youtube"></i> YouTube</a>
+                        <a href="#"><i class="bi bi-telegram"></i> Telegram</a>
+                    </div>
+                </div>
+                <!-- Cột 3 -->
+                <div class="col-md-4 footer-col last">
+                    <h5>Khác</h5>
+                    <ul class="list-unstyled mt-4">
+                        <li><a href="#">Airnova Blog</a></li>
+                        <li><a href="#">Chính sách quyền riêng tư</a></li>
+                        <li><a href="#">Điều khoản và điều kiện</a></li>
+                        <li><a href="#">Chính sách ưu đãi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>Công ty TNHH Airnova Việt Nam. Mã số DN: 0313581779. Tòa nhà An Phú, 117-119 Lý Chính Thắng, P. 7, Q. 3, TPHCM</p>
+                <p class="copyright">Copyright &copy; 2025 Airnova. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

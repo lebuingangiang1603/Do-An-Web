@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airnova Header</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+/* Header CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0px 30px;
+        }
+        .logo-header img {
+            max-height: 70px;
+            width: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 30px; 
+        }
+        .btn-login {
+            color: #262262;
+            border: 1px solid #262262;
+            background: none;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        .btn-signup {
+            background-color: #262262;
+            color: white;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        .dropdown-toggle::after {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand logo-header" href="#">
+                    <img src="img/logo.png" alt="Airnova Logo">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto"> 
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Ưu đãi <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Voucher</a></li>
+                                <li><a class="dropdown-item" href="#">Chương trình giảm giá</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Hỗ trợ <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                                <li><a class="dropdown-item" href="#">Thông tin liên hệ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#">Lịch sử đặt chỗ</a>
+                        </li>
+                    </ul>
+
+                    <!-- Đăng nhập / Đăng ký -->
+                    <div class="d-flex gap-3">
+                        <button class="btn-login">Đăng nhập</button>
+                        <button class="btn-signup">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

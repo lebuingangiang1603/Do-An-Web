@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airnova Chính sách</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    /* Header CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0px 30px;
+        }
+        .logo-header img {
+            max-height: 70px;
+            width: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 30px; 
+        }
+        .btn-login {
+            color: #262262;
+            border: 1px solid #262262;
+            background: none;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        .btn-signup {
+            background-color: #262262;
+            color: white;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        .dropdown-toggle::after {
+            display: none; 
+        }
+
+/* Footer CSS */
+        .footer {
+            background-color: #19232d;
+            color: #979797;
+            padding: 40px 0;
+        }
+        .footer a {
+            color: #979797;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #979797; 
+        }
+        .social-icons a i {
+            color: #979797; 
+        }
+        .bct-icon {
+            width: 200px;
+            display: block;
+            margin: 0;
+        }
+        .iata-iso {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .iata-icon, .iso-icon {
+            width: 80px;
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            width: fit-content;
+        }
+
+        .payment-methods div {
+            width: 60px;  
+            height: 40px;  
+            background: white;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            border-radius: 5px;  
+            position: relative;  
+        }
+
+        .payment-methods img {
+            max-width: 80%; 
+            max-height: 80%; 
+            object-fit: contain;
+            position: absolute; 
+        }
+        .logo-footer {
+            width: 75%;
+        }
+        hr {
+            border-color: #ccc;
+            margin: 20px 0;
+            width: 100%;
+            position: relative;
+            left: 0;
+        }
+        .footer h5 {
+            color: white;
+        }
+        .copyright {
+            color: white;
+        }
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        .about {
+            margin-left: 250px;
+            margin-right: auto;
+            max-width: 300px; 
+            text-align: left;
+        }
+        .last {
+            margin-left: 100px;
+        }
+        .about h5:nth-of-type(2) {
+            margin-top: 30px;
+        }
+
+/* Banner CSS */
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: brightness(70%);
+            object-position: center top;
+        }
+
+        .banner h2 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .banner .logo-priority {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px; 
+            height: auto;
+            opacity: 1; 
+            filter: none; 
+        }
+
+/* Cards CSS */
+        .priority-section {
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .priority-title {
+            color: #F7941D;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .priority-description {
+            font-size: 18px;
+            color: #262262;
+            max-width: 80%; 
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: center; 
+        }
+        @media (max-width: 768px) {
+            .priority-description {
+                font-size: 16px; 
+                max-width: 90%;
+            }
+            .priority-cards {
+                flex-direction: column; 
+                align-items: center;
+            }
+            .priority-card {
+                width: 80%; 
+            }
+        }
+        .priority-cards {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .priority-card {
+            width: 220px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+        .priority-card h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .priority-card p {
+            font-size: 11px;
+            color: white;
+        }
+        .priority-card .benefit {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 10px;
+            color: white;
+        }
+        .priority-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .bronze { background: #9D7454; }
+        .silver { background: #616161; }
+        .gold { background: #C8AB7A; }
+        .platinum-20m { background: #40444D; }
+        .platinum-50m { background: #0C1A23; }
+        .btn-join {
+            background-color: #FF5E1F;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px; 
+}
+/* FAQ CSS */
+        .faq-section {
+            margin-top: 2rem;
+            background-color: #ECF8FF;
+            padding: 30px 0px;
+            text-align: center;
+        }
+
+        .faq-section h2 {
+            font-size: 45px;
+            font-weight: bold;
+            color: #262262;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            max-width: 100%;
+            margin: auto;
+            text-align: left;
+        }
+
+        .accordion-item {
+            border: none;
+            background: transparent;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background: white;
+            color: #262262;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 14px 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            border: none;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); 
+            transition: box-shadow 0.2s ease-in-out;
+        }
+        
+        .accordion-body {
+            background: white; 
+            padding: 15px 20px;
+            font-size: 14px;
+            color: #333;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .accordion-button::after {
+            filter: brightness(0) saturate(100%) invert(52%) sepia(93%) saturate(2620%) hue-rotate(174deg) brightness(96%) contrast(91%);
+        }
+
+        .faq-navigation {
+            text-align: center;
+            background: #ECF8FF;
+            padding: 20px;
+        }
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #8BC34A;
+            position: relative;
+        }
+        .faq-tab {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: grey;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        .faq-tab.active {
+            color: #2AABEE;
+            font-weight: bold;
+        }
+        .faq-tab.active::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: #8BC34A;
+            bottom: -2px;
+            left: 0;
+        }
+        .faq-content {
+            text-align: left;
+        }
+        .faq-item {
+            display: none;
+            max-width: 100%;
+        }
+        .faq-item.active {
+            display: block;
+        }
+
+        #terms {
+            background: white;
+            color: #262262;
+            font-size: 14px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); 
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand logo-header" href="#">
+                    <img src="img/logo.png" alt="Airnova Logo">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto"> 
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Ưu đãi <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Voucher</a></li>
+                                <li><a class="dropdown-item" href="#">Chương trình giảm giá</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Hỗ trợ <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                                <li><a class="dropdown-item" href="#">Thông tin liên hệ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#">Lịch sử đặt chỗ</a>
+                        </li>
+                    </ul>
+
+                    <!-- Đăng nhập / Đăng ký -->
+                    <div class="d-flex gap-3">
+                        <button class="btn-login">Đăng nhập</button>
+                        <button class="btn-signup">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- Banner -->
+    <div class="banner">
+        <img src="img/bg banner.jpg" alt="Background">
+        <h2>Quyền lợi độc quyền đang chờ bạn với</h2>
+        <div class="priority-container">
+            <img src="img/Airnova_Priority.png" alt="Logo" class="logo-priority">
+        </div>
+    </div>
+    
+<!-- Card-Section -->
+    <section class="priority-section">
+        <h3 class="priority-title">Hãy cố gắng thăng hạng và gom thêm quyền lợi!</h3>
+        <p class="priority-description">Tham gia chương trình Khách hàng thân thiết <b>AirNova Priority</b> và tận hưởng tất cả đặc quyền thành viên, từ các dịch vụ khách hàng ưu tiên, giảm giá đặc biệt cho đến các quà thưởng, nâng hạng ghế hấp dẫn!</p>
+    </section>
+
+    <section class="priority-cards">
+        <div class="priority-card bronze">
+            <i class="bi bi-award-fill priority-icon"></i>
+            <h4>BRONZE PRIORITY</h4>
+            <p><b>Khi đăng ký là người dùng của Airnova</b></p>
+            <p>Quyền lợi độc quyền được hưởng:</p>
+            <div class="benefit">Mã giảm giá hạng Bronze đến 500K</div>
+        </div>
+        <div class="priority-card silver">
+            <i class="bi bi-award-fill priority-icon"></i>
+            <h4>SILVER PRIORITY</h4>
+            <p><b>Hoàn tất 1 đặt chỗ</b></p>
+            <p>Quyền lợi độc quyền được hưởng:</p>
+            <div class="benefit">Mã giảm giá hạng Silver đến 800K</div>
+            <div class="benefit">Tặng 5kg hành lý ký gửi miễn phí</div>
+            <div class="benefit">Ưu đãi độc quyền trong các sự kiện</div>
+        </div>
+        <div class="priority-card gold">
+            <i class="bi bi-award-fill priority-icon"></i>
+            <h4>GOLD PRIORITY</h4>
+            <p><b>Tích 2.500.000 Sao Priority</b></p>
+            <p>Quyền lợi độc quyền được hưởng:</p>
+            <div class="benefit">Mã giảm giá hạng Gold đến 2 Tr</div>
+            <div class="benefit">Tặng 5kg hành lý ký gửi miễn phí</div>
+            <div class="benefit">Ưu đãi độc quyền trong các sự kiện</div>
+        </div>
+        <div class="priority-card platinum-20m">
+            <i class="bi bi-award-fill priority-icon"></i>
+            <h4>PLATINUM PRIORITY</h4>
+            <p><b>Tích 20.000.000 Sao Priority</b></p>
+            <p>Quyền lợi độc quyền được hưởng:</p>
+            <div class="benefit">Mã giảm giá hạng Platinum đến 2.6 Tr</div>
+            <div class="benefit">Tặng 5kg hành lý ký gửi miễn phí</div>
+            <div class="benefit">Chăm sóc khách hàng VIP</div>
+            <div class="benefit">Ưu đãi độc quyền trong các sự kiện</div>
+        </div>
+        <div class="priority-card platinum-50m">
+            <i class="bi bi-award-fill priority-icon"></i>
+            <h4>PLATINUM PRIORITY</h4>
+            <p><b>Tích 50.000.000 Sao Priority</b></p>
+            <p>Quyền lợi độc quyền được hưởng:</p>
+            <div class="benefit">Mã giảm giá hạng Platinum đến 6 Tr</div>
+            <div class="benefit">Tặng 5kg hành lý ký gửi miễn phí</div>
+            <div class="benefit">Chăm sóc khách hàng VIP</div>
+            <div class="benefit">Ưu đãi độc quyền trong các sự kiện</div>
+            <div class="benefit">Đặc quyền Kim Cương</div>
+        </div>
+        <br>
+        <div>
+            <a href="#" class="btn-join">THAM GIA AIRNOVA PRIORITY</a>
+        </div>
+    </section>
+
+<!-- FAQ -->
+
+<section class="faq-section">
+    <h2>FAQ</h2>
+
+    <div class="faq-tabs" style="margin-bottom: 50px;">
+        <button class="faq-tab active" data-target="priority">Sao Priority</button>
+        <button class="faq-tab" data-target="terms">Điều kiện và Điều khoản</button>
+        <button class="faq-tab" data-target="implementation">Cách thực hiện</button>
+    </div>
+
+    <div class="faq-content">
+        <div id="priority" class="faq-item active">
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Sao Priority là gì?</button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sao Priority là đơn vị chúng tôi dùng để tính quá trình tích điểm Airnova Priority. Vì vậy, số lượng Sao Priority mà bạn tích được sẽ ảnh hưởng đến quá trình thăng hạng Traveloka Priority và thứ hạng.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Tôi làm cách nào để tích Sao Priority?</button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Bạn có thể tích lũy Sao Priority thông qua việc đặt vé máy bay và sử dụng dịch vụ của chúng tôi.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Sao Priority có hết hạn không? Nếu có, thời hạn sử dụng là bao lâu?</button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Có thể sử dụng Sao Priority 1 năm sau ngày kích hoạt.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Việc sử dụng mã giảm giá có ảnh hưởng đến số lượng Sao Priority mà tôi tích được không?</button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Có, vì số lượng Sao Priority bạn tích được sẽ tính toán dựa trên giá trị giao dịch mà bạn chi trả. Ví dụ: bạn thực hiện giao dịch trị giá 1.000.000Rp. Sau đó, bạn dùng mã giảm giá 20% khi thanh toán. Do đó, số lượng Sao Priority bạn tích được sẽ tính trên giá trị giao dịch bạn chi trả sau khi giảm giá là 800.000Rp.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Tôi có thể đổi Sao Priority để thanh toán cho các đặt chỗ của minh không?</button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Không, vì Sao Priority chỉ là đơn vị để tính quá trình tích điểm Airnova Priority. Bạn có thể đổi Điểm Airnova để thanh toán cho các đặt chỗ và nhận mã giảm giá.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="terms" class="faq-item">
+            <p><b>Cách trở thành thành viên Airnova Priority</b></p>
+            <ol>
+                <li>Chương trình Airnova Priority chỉ áp dụng cho người dùng đã đăng ký Airnova.</li>
+                <li>Người dùng không được phép thay đổi lựa chọn quốc gia của chương trình Airnova Priority.</li>
+                <li>Hạng Airnova Priority được xác định hoặc tính toán dựa trên việc hoàn tất nhiệm vụ và/hoặc tổng số Sao Priority mà người dùng có được từ (các) giao dịch đủ điều kiện.</li>
+                <li>Theo Điều 5 ở trên, (i) hoàn tất nhiệm vụ nghĩa là người dùng hoàn tất một số nhiệm vụ nhất định, chẳng hạn như đăng ký Chương trình Airnova Priority, hoàn tất một yêu cầu đặt chỗ, v.v. và (ii) Sao Priority là Điểm tích lũy Priority, một đơn vị mà chúng tôi sử dụng để tính quá trình tích điểm Airnova Priority của bạn.</li>
+                <li>(Các) giao dịch được thực hiện bên ngoài quốc gia đã đăng ký (dựa trên cài đặt lựa chọn quốc gia của người dùng) sẽ không đủ điều kiện cho quá trình tích điểm.</li>
+                <li>Thành viên Airnova Priority sẽ nhận được phần thưởng và đặc quyền theo từng hạng, có thể được sử dụng cho các giao dịch trên Airnova và/hoặc đối tác như được nêu trong chi tiết từng phần thưởng/đặc quyền tương ứng.</li>
+                <li>Airnova có toàn quyền thay đổi hoặc điều chỉnh các đặc quyền của Airnova Priority tùy từng thời điểm mà không cần thông báo trước.</li>
+                <li>Các phần thưởng và đặc quyền của Airnova Priority không được chuyển nhượng và chuyển đổi.</li>
+                <li>Theo Điều 10 ở trên, bất kỳ việc chuyển nhượng và/hoặc bán phần thưởng và/hoặc đặc quyền từ người dùng cho bất kỳ bên thứ ba nào hoặc ngược lại sẽ được coi là sự sơ suất đối với các điều khoản và điều kiện này và Airnova sẽ không chịu trách nhiệm hoặc trách nhiệm pháp lý về mọi khiếu nại, yêu cầu, tổn thất hoặc thiệt hại đã thực hiện, bị khiếu nại hoặc chịu hậu quả do sơ suất hoặc hành vi sai trái cố ý của người dùng.</li>
+                <li>Mỗi phần thưởng và/hoặc đặc quyền có thời hạn hiệu lực cũng như điều khoản và điều kiện khác nhau. Khi sử dụng phần thưởng hoặc đặc quyền, người dùng được coi là đã đồng ý với tất cả điều khoản và điều kiện của phần thưởng và/hoặc đặc quyền có liên quan.</li>
+                <li>Một số đặc quyền và/hoặc phần thưởng có thể chỉ khả dụng trong một khoảng thời gian giới hạn, trừ khi có quy định khác.</li>
+                <li>Hạng Airnova Priority có hiệu lực trong một năm và sẽ được đánh giá lại dựa trên tổng chi tiêu đã thực hiện trong 12 tháng qua.</li>
+                <li>Việc đánh giá hạng Airnova Priority sẽ được tiến hành 12 tháng một lần sau khi người dùng đạt đến hạng mới.</li>
+                <li>Hạng Airnova Priority sẽ bị hạ xuống nếu tổng chi tiêu không đạt ngưỡng tối thiểu trong quá trình đánh giá hạng.</li>
+                <li>Thành viên Airnova Priority chỉ có thể truy cập các đặc quyền và phần thưởng trong hạng hiện tại. Các đặc quyền và phần thưởng của hạng trước sẽ không còn truy cập được và sẽ không được chuyển sang hạng tiếp theo nếu thành viên Airnova Priority có liên quan đã thăng lên hạng tiếp theo.</li>
+                <li>Việc thăng hạng Airnova Priority sẽ được phản ánh trong tối đa 1 x 24 giờ sau khi người dùng đạt ngưỡng và đủ điều kiện để chuyển lên hạng cao hơn kế tiếp.</li>
+                <li>Airnova có toàn quyền thay đổi hoặc điều chỉnh cơ chế hạng, bao gồm thăng hạng và xuống hạng thành viên mà không cần thông báo trước.</li>
+                <li>Airnova có quyền chấm dứt, ngừng hoặc hủy chương trình Airnova Priority bất cứ lúc nào và theo quyết định riêng của mình mà không cần thông báo trước.</li>
+                <li>Airnova có quyền đình chỉ bất kỳ thành viên Airnova Priority nào nếu theo quyết định riêng của mình, Airnova xác định là một thành viên đã vi phạm các Điều khoản và Điều kiện này.</li>
+            </ol>
+        </div>
+
+        <div id="implementation" class="faq-item">
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Có bao nhiêu hạng Airnova Priority?</button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Hiện có 5 hạng Airnova Priority, bao gồm: Bronze, Silver, Gold, Platinum và Diamond.
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">Tôi có thể thăng hạng bằng cách nào??</button>
+                    </h2>
+                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Để được thăng hạng, bạn cần thực hiện một số hành động cho từng bậc, bao gồm:
+                            <ul>
+                                <li>Bronze : Khi đăng ký là người dùng của Airnova</li>
+                                <li>Silver : Hoàn tất 1 đặt chỗ</li>
+                                <li>Gold : Tích 2.500.000 Sao Priority</li>
+                                <li>Platinum : Tích 20.000.000 Sao Priority</li>
+                                <li>Diamond : Tích 50.000.000 Sao Priority</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">Tôi có thể bị xuống hạng không?</button>
+                    </h2>
+                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Có, bạn sẽ bị xuống hạng nếu không thực hiện hành động cần thiết để duy trì hạng hiện tại (ví dụ: tích được 180.000 Sao Priority để duy trì Gold Priority) trước khi hết thời hạn hiệu lực của hạng đó.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">Thời hạn hiệu lực cho hạng của tôi là bao lâu?</button>
+                    </h2>
+                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Hạng có hiệu lực trong 1 năm kể từ ngày thay đổi hạng của bạn.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">Nếu tôi được thăng hạng/bị xuống hạng, tôi có thể sử dụng quyền lợi ở hạng cũ không?</button>
+                    </h2>
+                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Không, bạn chỉ có thể sử dụng quyền lợi Airnova Priority có ở hạng hiện tại của bạn.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelectorAll('.faq-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+                document.getElementById(this.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+
+</section>
+
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-row">
+                <!-- Cột 1 -->
+                <div class="col-md-4 footer-col">
+                    <img src="img/Logo_White.png" alt="Airnova" class="mb-3 logo-footer">
+                    <img src="img/BCT.png" alt="BTC" class="bct-icon">
+                    <div class="iata-iso">
+                        <img src="img/icon.png" alt="IATA" class="iata-icon">
+                        <img src="img/ISO.png" alt="ISO" class="iso-icon">
+                    </div>
+                    <h5 class="mt-3">Đối tác thanh toán</h5>
+                    <div class="payment-methods">
+                        <div><img src="img/1.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/2.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/3.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/4.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/5.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/6.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/7.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/8.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/9.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/10.png" alt="Thanh toán 1"></div>
+                        <div><img src="img/11.jpg" alt="Thanh toán 1"></div>
+                        <div><img src="img/12.png" alt="Thanh toán 1"></div>
+                    </div>
+                </div>
+                <!-- Cột 2 -->
+                <div class="col-md-4 footer-col about">
+                    <h5>Về Airnova</h5>
+                    <ul class="list-unstyled mt-4">
+                        <li><a href="#">Cách đặt chỗ</a></li>
+                        <li><a href="#">Thông tin hỗ trợ</a></li>
+                        <li><a href="#">Liên hệ trợ giúp</a></li>
+                    </ul>
+                    <h5 style="margin-top: 100px;">Theo dõi chúng tôi trên</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                        <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="#"><i class="bi bi-tiktok"></i> TikTok</a>
+                        <a href="#"><i class="bi bi-youtube"></i> YouTube</a>
+                        <a href="#"><i class="bi bi-telegram"></i> Telegram</a>
+                    </div>
+                </div>
+                <!-- Cột 3 -->
+                <div class="col-md-4 footer-col last">
+                    <h5>Khác</h5>
+                    <ul class="list-unstyled mt-4">
+                        <li><a href="#">Airnova Blog</a></li>
+                        <li><a href="#">Chính sách quyền riêng tư</a></li>
+                        <li><a href="#">Điều khoản và điều kiện</a></li>
+                        <li><a href="#">Chính sách ưu đãi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>Công ty TNHH Airnova Việt Nam. Mã số DN: 0313581779. Tòa nhà An Phú, 117-119 Lý Chính Thắng, P. 7, Q. 3, TPHCM</p>
+                <p class="copyright">Copyright &copy; 2025 Airnova. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

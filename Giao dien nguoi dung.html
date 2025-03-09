@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airnova Header</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+/* Header CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0px 30px;
+        }
+        .logo-header img {
+            max-height: 70px;
+            width: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 30px; 
+        }
+        .dropdown-toggle::after {
+            display: none; 
+        }
+        .dropdown .btn {
+            border: none;
+            background-color: transparent;
+            font-size: 18px;
+            padding: 8px 16px;
+            color: #262262;
+        }
+        .dropdown .btn i {
+            font-size: 20px;
+        }
+    /* Style cho nút dropdown */
+        .user-dropdown-btn {
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #262262;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+        }
+        .user-dropdown-btn i {
+            font-size: 18px;
+        }
+
+    /* Style cho dropdown menu */
+        .user-dropdown-btn {
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #262262;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+        }
+
+        .custom-dropdown {
+            border-radius: 10px;
+            min-width: 270px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .brown-header {
+            background-color: #9D7454;
+            padding: 10px 15px;
+        }
+
+        .brown-header p {
+            color: white;
+            font-size: 18px;
+        }
+
+        .white-section {
+            background-color: white;
+            padding: 5px 0;
+        }
+
+        .custom-dropdown .dropdown-item {
+            font-size: 16px;
+            color: black;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+        }
+        .custom-dropdown .dropdown-item:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-icon {
+            font-size: 20px;
+            color: #F7941D;
+            margin-right: 10px;
+        }
+        .brown-header {
+            background-color: #a57143; 
+            padding: 12px; 
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brown-header p.fw-bold {
+            font-size: 20px; 
+            margin-bottom: 4px; 
+        }
+
+        .brown-header p.member-tier {
+            font-size: 14px; 
+            color: white; 
+            white-space: normal; 
+            word-wrap: break-word; 
+        }
+
+/* Bar CSS */
+        .sidebar {
+            width: 25%;
+            height: auto;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2.5rem;
+            margin-left: 2.5rem;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .user-info p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .divider {
+            position: relative;
+            left: 0; 
+            width: calc(100% + 30px); 
+            height: 0.1px;
+            background: #929292;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .menu-item {
+            display: flex;
+            align-items: left;
+            padding: 5px;
+            cursor: pointer;
+            width: 100%;
+            white-space: nowrap;
+        }
+        .menu-item:hover, .menu-item.active {
+            background: #d6d6d6;
+            border-radius: 5px;
+        }
+        .menu-item i {
+            font-size: 20px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .menu-item p {
+            margin: 0;
+            font-weight: bold;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand logo-header" href="#">
+                    <img src="img/logo.png" alt="Airnova Logo">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto"> 
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Ưu đãi <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Voucher</a></li>
+                                <li><a class="dropdown-item" href="#">Chương trình giảm giá</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Hỗ trợ <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                                <li><a class="dropdown-item" href="#">Thông tin liên hệ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#">Lịch sử đặt chỗ</a>
+                        </li>
+                    </ul>
+
+                    <!-- User info dropdown -->
+                    <div class="dropdown">
+                        <button class="btn user-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <span class="username">Username</span>
+                            <span class="mx-2">|</span>
+                            <i class="bi bi-coin text-warning"></i>
+                            <span class="mx-1">0 điểm</span>
+                            <i class="bi bi-chevron-down text-secondary"></i>
+                        </button>
+                        <ul class="dropdown-menu custom-dropdown">
+                            <!-- Phần tiêu đề có nền nâu -->
+                            <li class="dropdown-header brown-header">
+                                <p class="fw-bold text-white mb-0">Username</p>
+                                <p class="text-white small mb-0">Bạn là thành viên <b>Bronze Priority</b></p>
+                            </li>
+                            <!-- Phần menu có nền trắng -->
+                            <div class="white-section">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-coin custom-icon"></i> 0 điểm</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person custom-icon"></i> Chỉnh sửa hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-lock custom-icon"></i> Mật khẩu và bảo mật</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-people custom-icon"></i> Thông tin hành khách đã lưu</a></li>
+                                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-power custom-icon"></i> Đăng xuất</a></li>
+                            </div>
+                        </ul>
+                    </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- Side bar -->
+<div class="sidebar">
+    <!-- User Info -->
+    <div class="user-info">
+        <p>
+            <i class="bi bi-person fs-3"></i>
+            <span>User name</span>
+            <span class="mx-2 border-end border-dark"></span>
+            <span>Hạng thành viên</span>
+        </p>
+    </div>
+    
+    <div class="divider"></div>
+
+    <!-- Points -->
+    <div class="menu-item">
+        <i class="bi bi-coin"></i>
+        <p>0</p>
+    </div>
+    <!-- History -->
+    <div class="menu-item">
+        <i class="bi bi-list"></i>
+        <p>Lịch sử đặt vé</p>
+    </div>
+    <!-- Saved -->
+    <div class="menu-item">
+        <i class="bi bi-people"></i>
+        <p>Thông tin hành khách</p>
+    </div>
+    <!-- Account -->
+    <div class="menu-item">
+        <i class="bi bi-gear"></i>
+        <p>Tài khoản</p>
+    </div>
+    <!-- Log out -->
+    <div class="menu-item">
+        <i class="bi bi-power"></i>
+        <p>Đăng xuất</p>
+    </div>
+</div>
+
+</body>
+</html>
